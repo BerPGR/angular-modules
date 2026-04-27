@@ -1,0 +1,25 @@
+<div class="p-6 max-w-lg mx-auto bg-white shadow-lg rounded-lg mt-6">
+    <h2 class="text-2xl font-semibold text-gray-700 mb-4">Nova Categoria</h2>
+    <hr>
+    <form id="categoriaForm" [formGroup]="camposForm" (ngSubmit)="salvar()" class="mt-4">
+        <div class="mb-4">
+            <label class="block text-gray-600 font-medium mb-2">Nome</label>
+            <input formControlName="nome" type="text" name="nome" placeholder="Ex: Restaurantes, praias, shopping"
+                class="w-full p-3 border border-gray-300 rounded shadow-sm focus:ring focus:ring-blue-400" required />
+            <span *ngIf="isFieldInvalid('nome')" class="text-red-500 text-sm">Campo Obrigatório</span>
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-gray-600 font-medium mb-2">Descrição</label>
+            <textarea formControlName="descricao" type="text" name="descricao"
+                placeholder="Ex: Restaurantes, praias, shopping" rows="4"
+                class="w-full p-3 border border-gray-300 rounded shadow-sm focus:ring focus:ring-blue-400"
+                required></textarea>
+            <span *ngIf="isFieldInvalid('descricao')" class="text-red-500 text-sm">Campo Obrigatório</span>
+        </div>
+
+        <button type="submit" class="w-full bg-blue-600 text-white rounded font-semibold p-3 shadow hover:bg-blue-900 cursor-pointer
+            transition-color duration-300
+        ">Cadastrar Categoria</button>
+    </form>
+</div>
