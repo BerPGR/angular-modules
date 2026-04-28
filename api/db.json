@@ -1,9 +1,20 @@
 {
-    "categorias": [
-        {
-            "id": 1,
-            "nome": "Restaurantes",
-            "descricao": "Lugares para alimentação"
-        }
-    ]
+  "categorias": [
+    {
+      "nome": "Restaurantes atualizado",
+      "descricao": "Lugares para alimentação",
+      "id": "1"
+    },
+    {
+      "id": "Z9ODOgo2hOo",
+      "nome": "Shoppings",
+      "descricao": "Para fazer compras e passear"
+    },
+    {
+      "nome": "Praias",
+      "descricao": "Para curtir o verão",
+      "id": "fdWx2j97xHY"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
