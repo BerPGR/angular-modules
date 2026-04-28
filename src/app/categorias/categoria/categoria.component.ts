@@ -23,7 +23,9 @@ export class CategoriaComponent {
     this.camposForm.markAllAsTouched()
     if (this.camposForm.valid) {
       this.service.save(this.camposForm.value).subscribe({
-        next: (categoria) => console.log("Salvo com sucesso!", categoria),
+        next: (categoria) => {
+          this.camposForm.reset()
+        },
         error: erro => console.log("deu ruim", erro)
       })
     }
