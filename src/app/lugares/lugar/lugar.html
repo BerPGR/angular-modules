@@ -10,9 +10,12 @@
         </div>
 
         <div class="mb-4">
-            <label for="nome" class="block text-gray-600 font-medium mb-2">Categoria</label>
-            <input class="w-full p-3 border border-gray-300 rounded shadow-sm focus:ring focus:ring-blue-400"
-                type="text" id="nome" name="nome" formControlName="nome" placeholder="Praia do Sol" />
+            <label for="categoria" class="block text-gray-600 font-medium mb-2">Categoria</label>
+            <select id="categoria" name="categoria" formControlName="categoria"
+                class="w-full p-3 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring-blue-400">
+                <option [value]="" disabled>Selecione uma categoria</option>
+                <option *ngFor="let categoria of categorias" [value]="categoria.nome">{{categoria.nome}}</option>
+            </select>
         </div>
 
         <div class="mb-4">
@@ -24,13 +27,21 @@
         <div class="mb-4">
             <label for="urlFoto" class="block text-gray-600 font-medium mb-2">URL Foto</label>
             <input class="w-full p-3 border border-gray-300 rounded shadow-sm focus:ring focus:ring-blue-400"
-                type="text" id="urlFoto" name="urlFoto" formControlName="urlFoto" placeholder="http://exemplo.com/foto.jgp" />
+                type="text" id="urlFoto" name="urlFoto" formControlName="urlFoto"
+                placeholder="http://exemplo.com/foto.jgp" />
         </div>
 
         <div class="mb-4">
-            <label for="nome" class="block text-gray-600 font-medium mb-2">Nome do Lugar</label>
-            <input class="w-full p-3 border border-gray-300 rounded shadow-sm focus:ring focus:ring-blue-400"
-                type="text" id="nome" name="nome" formControlName="nome" placeholder="Praia do Sol" />
+            <label for="avaliacao" class="block text-gray-600 font-medium mb-2">Avaliação</label>
+            <select id="avaliacao" name="avaliacao" formControlName="avaliacao"
+                class="w-full p-3 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring-blue-400">
+                <option [value]="" disabled>Selecione uma avaliação</option>
+                <option [value]="1">1 - Ruim</option>
+                <option [value]="2">2 - Regular</option>
+                <option [value]="3">3 - Bom</option>
+                <option [value]="4">4 - Muito bom</option>
+                <option [value]="5">5 - Excelente</option>
+            </select>
         </div>
 
 
