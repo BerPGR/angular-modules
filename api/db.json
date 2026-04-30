@@ -16,5 +16,15 @@
       "id": "fdWx2j97xHY"
     }
   ],
+  "lugares": [
+    {
+      "nome": "Cantos da alegria",
+      "categoria": "Praias",
+      "localizacao": "Brasília, DF, BR",
+      "urlFoto": "https://guia.melhoresdestinos.com.br/praias-de-joao-pessoa.html",
+      "avaliacao": "4",
+      "id": "O56bDD-TMaA"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }
