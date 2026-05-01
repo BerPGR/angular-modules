@@ -10,7 +10,7 @@ import { LugarService } from '../lugar.service';
   templateUrl: './lugar.html',
   styleUrl: './lugar.css',
 })
-export class LugarComponent implements OnInit{
+export class LugarComponent implements OnInit {
 
   camposForm: FormGroup
   categorias: Categoria[] = []
@@ -35,12 +35,20 @@ export class LugarComponent implements OnInit{
   }
 
   salvar() {
-    this.service.salvar(this.camposForm.value).subscribe({
-      next: (lugar) => {
-        console.log("Cadastrado com sucesso: ", lugar)
-        this.camposForm.reset()
-      },
-      error: (erro) => console.error("Erros: ", erro)
-    })
+    this.camposForm.markAllAsTouched()
+    if (this.camposForm.valid) {
+      this.service.salvar(this.camposForm.value).subscribe({
+        next: (lugar) => {
+          console.log("Cadastrado com sucesso: ", lugar)
+          this.camposForm.reset()
+        },
+        error: (erro) => console.error("Erros: ", erro)
+      })
+    }
+  }
+
+  isFieldInvalid(fieldName: string): boolean {
+    const campo = this.camposForm.get(fieldName)
+    return (campo?.invalid && campo?.touched && campo?.errors?.['required']) || false;
   }
 }

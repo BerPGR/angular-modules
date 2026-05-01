@@ -24,6 +24,14 @@
       "urlFoto": "https://guia.melhoresdestinos.com.br/praias-de-joao-pessoa.html",
       "avaliacao": "4",
       "id": "O56bDD-TMaA"
+    },
+    {
+      "nome": "Praia do espelho",
+      "categoria": "Praias",
+      "localizacao": "SC, Itajaí",
+      "urlFoto": "https://www.riodasostras.rj.gov.br/wp-content/uploads/2020/10/praia-do-abrico.jpg",
+      "avaliacao": "4",
+      "id": "4OGfbIra-ZI"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

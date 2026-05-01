@@ -7,6 +7,8 @@
             <label for="nome" class="block text-gray-600 font-medium mb-2">Nome do Lugar</label>
             <input class="w-full p-3 border border-gray-300 rounded shadow-sm focus:ring focus:ring-blue-400"
                 type="text" id="nome" name="nome" formControlName="nome" placeholder="Praia do Sol" />
+            <span *ngIf="isFieldInvalid('nome')" class="text-red-500 text-sm">Campo Obrigatório</span>
+
         </div>
 
         <div class="mb-4">
@@ -16,12 +18,14 @@
                 <option [value]="" disabled>Selecione uma categoria</option>
                 <option *ngFor="let categoria of categorias" [value]="categoria.nome">{{categoria.nome}}</option>
             </select>
+            <span *ngIf="isFieldInvalid('categoria')" class="text-red-500 text-sm">Campo Obrigatório</span>
         </div>
 
         <div class="mb-4">
             <label for="localizacao" class="block text-gray-600 font-medium mb-2">Localização</label>
             <input class="w-full p-3 border border-gray-300 rounded shadow-sm focus:ring focus:ring-blue-400"
                 type="text" id="localizacao" name="localizacao" formControlName="localizacao" placeholder="São Paulo" />
+            <span *ngIf="isFieldInvalid('localizacao')" class="text-red-500 text-sm">Campo Obrigatório</span>
         </div>
 
         <div class="mb-4">
@@ -29,6 +33,7 @@
             <input class="w-full p-3 border border-gray-300 rounded shadow-sm focus:ring focus:ring-blue-400"
                 type="text" id="urlFoto" name="urlFoto" formControlName="urlFoto"
                 placeholder="http://exemplo.com/foto.jgp" />
+            <span *ngIf="isFieldInvalid('urlFoto')" class="text-red-500 text-sm">Campo Obrigatório</span>
         </div>
 
         <div class="mb-4">
@@ -42,6 +47,7 @@
                 <option [value]="4">4 - Muito bom</option>
                 <option [value]="5">5 - Excelente</option>
             </select>
+            <span *ngIf="isFieldInvalid('avaliacao')" class="text-red-500 text-sm">Campo Obrigatório</span>
         </div>
 
 
