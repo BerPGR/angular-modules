@@ -15,6 +15,8 @@ export class GaleriaComponent implements OnInit {
 
   lugares: LugarClass[] = []
   categoriasFiltro: Categoria[] = []
+  nomeFiltro: string = ""
+  categoriaFiltro: string = ""
 
   constructor(
     private http: HttpClient,
@@ -34,5 +36,11 @@ export class GaleriaComponent implements OnInit {
 
   getTotalEstrelas(lugar: LugarClass): string {
     return '&#9733;'.repeat(parseInt(lugar.avaliacao!) || 0)
+  }
+
+  filter() {
+    this.lugarService.filtrar(this.nomeFiltro, this.categoriaFiltro).subscribe({
+      next: lugares => this.lugares = lugares
+    })
   }
 }
